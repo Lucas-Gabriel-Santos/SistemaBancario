@@ -23,5 +23,5 @@ src/
     │   ├── Conta.java
     │   ├── ContaCorrente.java
     │   ├── ContaPoupanca.java
-    │   └── ITributavelo.java
+    │   └── ITributavel.java
 ```
