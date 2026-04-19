@@ -16,12 +16,12 @@ desenvolvido em Java para a disciplina de Linguagem de Programação II.
 ## 📁 Estrutura
 ```text
 src/
-└── supermercado/
+    ├── interfaces/
+    │   └── ITributavel.java
     ├── main/
     │   └── Main.java
     ├── model/
     │   ├── Conta.java
     │   ├── ContaCorrente.java
-    │   ├── ContaPoupanca.java
-    │   └── ITributavel.java
+    │   └── ContaPoupanca.java
 ```
