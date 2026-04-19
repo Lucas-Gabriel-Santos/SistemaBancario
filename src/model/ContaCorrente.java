@@ -1,6 +1,8 @@
 package model;
 
-public class ContaCorrente extends Conta implements ITributavel{
+import interfaces.ITributavel;
+
+public class ContaCorrente extends Conta implements ITributavel {
 
     //Construtor
     public ContaCorrente(int numero, String cliente) {
@@ -11,8 +13,10 @@ public class ContaCorrente extends Conta implements ITributavel{
     @Override
     public boolean sacar(double valor){
         double ValorComTaxa = valor * 1.05;
-        if(this.saldo >= ValorComTaxa){
-            this.saldo -= ValorComTaxa;
+        double ValorTotal = valor + ValorComTaxa;
+
+        if(this.saldo >= ValorTotal){
+            this.saldo -= ValorTotal;
             return true;
         }
         return false;
@@ -20,7 +24,7 @@ public class ContaCorrente extends Conta implements ITributavel{
 
     @Override
     public boolean transferir(double valor, Conta conta){
-        if(this.saldo(valor)){
+        if(this.sacar(valor)){
             conta.depositar(valor);
             return true;
         }
@@ -30,5 +34,10 @@ public class ContaCorrente extends Conta implements ITributavel{
     @Override
     public double calculaTributos() {
         return this.saldo * 0.01;
+    }
+
+    @Override
+    public String getTipo() {
+        return "Corrente";
     }
 }

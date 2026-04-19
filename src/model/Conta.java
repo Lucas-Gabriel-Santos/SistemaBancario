@@ -22,7 +22,7 @@ public abstract class Conta {
     public double getSaldo() {
         return saldo;
     }
-
+    public abstract String getTipo();
 
     //Metodos
     public void depositar(double valor){

@@ -3,7 +3,7 @@ package model;
 public class ContaPoupanca extends Conta{
 
     public ContaPoupanca(int numero, String cliente) {
-        super(numero, cliente)
+        super(numero, cliente);
     }
 
     @Override
@@ -17,10 +17,15 @@ public class ContaPoupanca extends Conta{
 
     @Override
     public boolean transferir(double valor, Conta conta){
-        if(this.saldo(valor)){
+        if(this.sacar(valor)){
             conta.depositar(valor);
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String getTipo() {
+        return "Poupança";
     }
 }
